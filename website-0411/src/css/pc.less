@@ -1,0 +1,272 @@
+.positionCenter{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.positionX{
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+.positionY{
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+.bg(@url){
+  background-image: @url;
+  background-size: 100% 100%;
+}
+/*=======================头部========*/
+.header{
+  height: 50px;
+  width: 100%;
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+  .tabBorder{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #ff8800;
+    left: 0;
+    top: 50px;
+  }
+  .headerContainer{
+    width: 100%;
+    height: 100%;
+    max-width: 980px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+    .logo{
+      .positionY;
+      left: 0px;
+      height: 28px;
+      width: 135px;
+      text-indent: -2000em;
+      img{
+        .positionCenter;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  .tabs{
+    height: 100%;
+    width: auto;
+    .positionCenter;
+    .navItems{
+      height: 100%;
+      width: auto;
+      .navItem{
+        float: left;
+        height: 104px;
+        width: 100px;
+        text-align: center;
+        font-size: 14px;
+        display: block;
+        font-weight: 500;
+        line-height: 50px;
+        color: #333;
+        a{
+          float: left;
+          height: 50px;
+          width: 100%;
+          color: #333;
+          &:hover{
+            color: #ff8800;
+          }
+        }
+        a.active{
+          color: #ff8800;
+        }
+        div{
+          float: left;
+          height: 27px;
+          width: 100%;
+          color: #333;
+          position: relative;
+          z-index: 100;
+          a{
+            float: left;
+            height: 27px;
+            font-size: 14px;
+            line-height: 27px;
+            width: 100%;
+            color: #333;
+            &:hover{
+              color: #ff8800;
+            }
+          }
+        }
+      }
+    }
+  }
+  .itemChildrenBg{
+    width: 100%;
+    height: 54px;
+    background: #FFFFFF;
+    display: none;
+  }
+  .itemChildrenBg_active{
+    display: block;
+    width: 100%;
+    height: 54px;
+    background: #FFFFFF;
+  }
+}
+/*=======================轮播========*/
+.slider{
+  overflow: hidden;
+  width: 100%;
+  height: 600px;
+  position: relative;
+  ul{
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    left: 0;
+    transition: left 1s;
+  }
+  .slider-item{
+    display: inline-block;
+    height: 600px;
+    width: auto;
+    position: relative;
+    background-color: #000000;
+    img{
+      .positionCenter;
+      width: 100%;
+      height: 600px;
+    }
+  }
+  .slider-item:nth-of-type(2){
+    img{
+      width: 814px;
+      height: 435px;
+    }
+  }
+  .slider-dots-wrap{
+    z-index: 99;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    .slider-dot{
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border: 2px solid #fff;
+      margin: 6px;
+      cursor: pointer;
+      border-radius: 100%;
+      &.slider-dot-selected{
+        background: #FFFFFF;
+      }
+    }
+  }
+}
+/*=======================关于========*/
+.about{
+  margin-top: 4px;
+  height: 180px;
+  width: 100%;
+  ul{
+    float: left;
+    height: 180px;
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -o-box;
+    display: box;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    li{
+      float: left;
+      height: 180px;
+      width: auto;
+      a,img{
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+/*=======================aboutleka========*/
+.aboutleka{
+  padding-top: 50px;
+  img{
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+}
+/*=======================lekaweishi========*/
+.lekaweishi{
+  padding-top: 50px;
+  img{
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+}
+/*=======================lekadongtai========*/
+.lekadongtai{
+  padding-top: 50px;
+  img{
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+}
+/*=======================lekazhuantou========*/
+.lekazhuantou{
+  padding-top: 50px;
+  img{
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+}
+/*=======================aboutUs========*/
+.aboutUs{
+  padding-top: 50px;
+  img{
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+}
+/*=======================底部========*/
+.footer{
+  width: 100%;
+  max-width: 980px;
+  margin: 80px auto 0 auto;
+  overflow: hidden;
+  text-align: center;
+  font-size: 12px;
+  line-height: 60px;
+  color: #c3c3c3;
+}
