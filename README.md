@@ -108,10 +108,17 @@ module.exports = {
 };
 
 ```
-**六、写入口文件**
+**六、入口文件**
 ```
-var React = require('react');
-var ReactDOM = require('react-dom');
+root.js
+
+//react.js是React 的核心库
+import React from 'react';
+//react-dom.js是提供与DOM相关的功能
+import ReactDOM from 'react-dom';
+
+import MediaQuery from 'react-responsive';
+
 import '../css/reset.less';(引入less样式文件)
 ...
 
@@ -119,16 +126,18 @@ import {Router, Route, IndexRoute, hashHistory } from 'react-router';
 import {createHashHistory } from 'history';
 var routerHistory = require('react-router').useRouterHistory;   //去掉地址中默认的?_k=****
 const appHistory = routerHistory(createHashHistory)({ queryKey: false }) ;
+
+//引入组件
 import MyIndex from './components/index/index';
 import ContactUsIndex from './components/contactUs/contactUsIndex';
 ...
 
-import MediaQuery from 'react-responsive';
 
 export default class Root extends React.Component {
 	render() {
 		return (
 			<div>
+			    //PC端
 				<MediaQuery query='(min-device-width: 1224px)'>
 					<Router history={appHistory}>
 						<Route path='/' component={MyIndex}></Route>
@@ -136,6 +145,7 @@ export default class Root extends React.Component {
 						...
 					</Router>
 				</MediaQuery>
+				//移动端
 				<MediaQuery query='(max-device-width: 1224px)'>
 				</MediaQuery>
 			</div>
