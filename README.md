@@ -78,12 +78,13 @@ module.exports = {
   devtool: debug ? "inline-sourcemap" : null,
   //入口文件
   entry: "./src/js/root.js",
-  //babel重要的loader在这里
+  //babel重要的loader在这里,进行字符串的处理
   module: {
     loaders: [
       {
         test: /\.js?$/,
         exclude: /(node_modules)/,
+        //编译JSX,编译后缀名为 .js 或者 .jsx 的文件
         loader: 'babel-loader',
         query: {
             //添加两个presents 使用这两种presets处理js或者jsx文件
@@ -100,6 +101,11 @@ module.exports = {
     path: __dirname,
     filename: "./src/bundle.js"
   },
+  //指定可以被import的文件后缀,文件路径的指向。比如 Hello.jsx 这样的文件就可以直接用 import Hello from 'Hello' 引用。
+  resolve: {
+      extensions: ['', '.js', '.jsx']
+  },
+  //插件，比loader更强大，能使用更多webpack的api
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
